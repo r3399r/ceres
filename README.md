@@ -1,2 +1,2 @@
-# zubeneschamali
-short url service
+# ceres
+next.js vs react.js

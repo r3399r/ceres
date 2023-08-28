@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: "AWS::Serverless-2016-10-31"
-Description: zubeneschamali deployment cloudformation script
+Description: ceres-nextjs deployment cloudformation script
     
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -9,9 +9,6 @@ Globals:
 Parameters:
   Project:
     Type: String
-  TargetEnvr:
-    Type: String
-    Description: The target environment for API Gateway deployment.
 Resources:
   #########################################
   ##### Cloudfront and Route53 config #####
@@ -47,7 +44,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub ${Project}-${TargetEnvr}
+      BucketName: !Sub ${Project}
       WebsiteConfiguration:
         ErrorDocument: index.html
         IndexDocument: index.html
